@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/tenttran"
+    tools:context=".Page3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/tent"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/Rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:background="@color/colorControlActivated"
+            android:shadowColor="#CC000000"
+            android:shadowDx="4"
+            android:shadowDy="5"
+            android:shadowRadius="5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="#fcdbdb"
+            android:textSize="20sp"
+            android:text="@string/Rate" />
+
+        <TextView
+            android:id="@+id/Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:background="@color/colorControlActivated"
+            android:shadowColor="#CC000000"
+            android:shadowDx="4"
+            android:shadowDy="5"
+            android:shadowRadius="5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="#fcdbdb"
+            android:textSize="20sp"
+            android:text="@string/Location" />
+
+        <TextView
+            android:id="@+id/Specialty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:background="@color/DarkPink"
+            android:shadowColor="#CC000000"
+            android:shadowDx="4"
+            android:shadowDy="5"
+            android:shadowRadius="5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="#fcdbdb"
+            android:textSize="20sp"
+            android:text="@string/Specialty" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+</LinearLayout>

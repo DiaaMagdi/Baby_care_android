@@ -17,8 +17,8 @@ tools:context=".Page1"
     android:orientation="horizontal"
     >
 
-    <Button
-        android:id="@+id/button1"
+    <TextView
+        android:id="@+id/Rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -38,8 +38,8 @@ tools:context=".Page1"
         android:textSize="20dp"
         android:text="@string/Rate" />
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/Location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -58,8 +58,8 @@ tools:context=".Page1"
         android:textSize="20dp"
         android:text="@string/Location" />
 
-    <Button
-        android:id="@+id/button3"
+    <TextView
+        android:id="@+id/Specialty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
