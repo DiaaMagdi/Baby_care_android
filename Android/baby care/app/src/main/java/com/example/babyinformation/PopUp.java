@@ -31,7 +31,7 @@ public class PopUp extends AppCompatActivity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width*.95),(int)(height*.6));
+        getWindow().setLayout((int) (width*1),(int)(height*.6));
 
         List<Fragment> list = new ArrayList<>();
         list.add(new PageFragment1());
