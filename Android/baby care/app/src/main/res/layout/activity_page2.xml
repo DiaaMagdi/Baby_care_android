@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/backpop"
+    tools:context=".Page2"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#ff5f70"
+    android:orientation="horizontal"
+    >
+
+    <Button
+        android:id="@+id/Rate"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="#ff5f70"
+        android:text="Rate"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/Location"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/currentbtn"
+        android:text="Location"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/Specialty"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="#ff5f70"
+        android:text="Specialty"
+        android:textColor="#fff" />
+
+</LinearLayout>
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="TextView" />
+
+</LinearLayout>

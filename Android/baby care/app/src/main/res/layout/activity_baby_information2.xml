@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    android:scrollbars="vertical"
+    tools:context=".Baby_information">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-125dp"
+        tools:layout_editor_absoluteY="-88dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/babytext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:shadowColor="#CC000000"
+                android:shadowDx="4"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/baby_information"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="#FFD8DB"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/babytext"
+                app:srcCompat="@drawable/logo" />
+
+            <EditText
+                android:id="@+id/namebaby"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:autofillHints=""
+                android:background="@drawable/editround"
+                android:fontFamily="sans-serif"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="#FF5F70"
+                android:textColorHint="#A6E0828A"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <Spinner
+                android:id="@+id/gender"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/gender"
+                android:entries="@array/genderlist"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/namebaby" />
+
+            <TextView
+                android:id="@+id/Date"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/gender"
+                android:paddingLeft="21dp"
+                android:paddingTop="8dp"
+                android:text="Date"
+                android:textColor="#A6E0828A"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+            <EditText
+                android:id="@+id/weight"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/editround"
+                android:ems="10"
+                android:hint="@string/Weight"
+                android:inputType="numberDecimal"
+                android:paddingLeft="21dp"
+                android:textColor="#FF5F70"
+                android:textColorHint="#A6E0828A"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Date" />
+
+            <EditText
+                android:id="@+id/editText10"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/editround"
+                android:ems="10"
+                android:hint="Length"
+                android:inputType="numberDecimal"
+                android:paddingLeft="21dp"
+                android:textColor="#FF5F70"
+                android:textColorHint="#A6E0828A"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weight" />
+
+            <Button
+                android:id="@+id/submitbutton"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/editround"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:text="Submit"
+                android:textColor="#FF5F70"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText10" />
+
+            <Button
+                android:id="@+id/newbaby2"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:text="Add another baby ?"
+                android:textAlignment="center"
+                android:textColor="#FF5F70"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

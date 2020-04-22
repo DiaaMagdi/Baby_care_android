@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundmain"
+    android:scrollbars="vertical"
+    tools:context=".Baby_profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="Parent"
+            android:textColor="#ff939c" />
+
+        <Button
+            android:id="@+id/baby"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="Baby"
+            android:textColor="#ff5f70" />
+
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/mainGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:columnOrderPreserved="false"
+        android:alignmentMode="alignMargins"
+        android:layout_weight="8"
+        android:padding="10dp"
+        tools:targetApi="ice_cream_sandwich">
+
+        //////////////////////////////// Row 1 ////////////////////////
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/heartid"
+            android:layout_width="0dp"
+            android:onClick="tips"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:onClick="tips"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:background="@drawable/babycryback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="tips"
+                    android:text="Baby cry"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/feedingid"
+            android:layout_width="0dp"
+            android:onClick="tips"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="tips"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/predictback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Predict diseases"
+                    android:onClick="tips"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        //////////////////////////////// ROW 2 /////////////////////////
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sleepid"
+            android:layout_width="0dp"
+            android:onClick="vaccination"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="vaccination"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/vaccback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vaccination"
+                    android:onClick="vaccination"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/weightid"
+            android:layout_width="0dp"
+            android:onClick="FunnyPhotos"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="FunnyPhotos"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/funnyphotoback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Funny photo"
+                    android:onClick="FunnyPhotos"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        //////////////////////////////// ROW 3 /////////////////////////
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/lengthid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="settingbaby"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="settingbaby"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:background="@drawable/settingback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Setting"
+                    android:onClick="settingbaby"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+</LinearLayout>

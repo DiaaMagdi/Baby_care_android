@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/text1"
+        style="?attr/spinnerDropDownItemStyle"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginEnd="50dp"
+        android:ellipsize="marquee"
+        android:textColor="@color/tenttran"
+        android:background="@drawable/editround" />
+</LinearLayout>
