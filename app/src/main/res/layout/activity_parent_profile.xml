@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundmain"
+    android:scrollbars="vertical"
+    tools:context=".parent_profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="Parent"
+            android:textColor="#ff5f70" />
+
+        <Button
+            android:id="@+id/baby"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="Baby"
+            android:textColor="#ff939c" />
+
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/mainGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:padding="10dp"
+        android:rowCount="3"
+        tools:targetApi="ice_cream_sandwich">
+
+        //////////////////////////////// Row 1 /////////////////////////
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/reminder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:onClick="tips"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/reminderback"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="tips"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:onClick="tips"
+                    android:padding="12dp"
+                    android:text="Reminder"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        //////////////////////////////// ROW 2 /////////////////////////
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/babysitter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:onClick="tips"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/babysitterback"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="tips"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:onClick="tips"
+                    android:padding="12dp"
+                    android:text="Baby sitter"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        //////////////////////////////// ROW 3 /////////////////////////
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/diet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:onClick="Diet"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/dietback"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="Diet"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:onClick="Diet"
+                    android:padding="12dp"
+                    android:text="Diet"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/doctor"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:onClick="tips"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/doctorback"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="Doctors"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:onClick="Doctors"
+                    android:padding="12dp"
+                    android:text="Doctors"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/setting"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="settingbaby"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="settingbaby"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:background="@drawable/settingback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Setting"
+                    android:onClick="settingbaby"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </GridLayout>
+
+</LinearLayout>

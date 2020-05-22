@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/babysetting"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:id="@+id/babysett">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:text="Babies settings"
+        android:layout_marginLeft="30dp"
+        android:textColor="@color/buttonpop"
+        android:textSize="22sp" />
+
+</androidx.appcompat.widget.Toolbar>
