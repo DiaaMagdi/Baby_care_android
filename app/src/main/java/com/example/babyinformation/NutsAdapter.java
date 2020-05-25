@@ -55,30 +55,19 @@ public class NutsAdapter extends RecyclerView.Adapter<NutsAdapter.NutsViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull NutsViewHolder holder, int position) {
-//        holder.tilteTV.setText(NutsList.get(position).getTitle());
-//        holder.useridTV.setText(NutsList.get(position).getUserId()+"");
-//        holder.bodyTV.setText(NutsList.get(position).getBody());
-//        Picasso.get().load(NutsList.get(position).getPhoto()).error(Log.v("image","callingImage")).fit().into(holder.myImage);
-//        Picasso.get().load("https://imgur.com/obmKLZx").fit().into(holder.myImage);
+
         holder.nutsNames.setText(NutsList.get(position).getTypes());
 //        holder.myText2.setText(data2[position]);
 //        holder.myText3.setText(data3[position]);
 //        holder.myText4.setText(data4[position]);
 //        holder.myText5.setText(data5[position]);
-//        holder.myLine.setImageResource(Line[position]);
-//        holder.myImage.setImageResource(images[position]);
         holder.im6.setImageResource(icons[Integer.parseInt(NutsList.get(position).getVal1())]);
         holder.im2.setImageResource(icons[Integer.parseInt(NutsList.get(position).getVal2())]);
         holder.im.setImageResource(icons[Integer.parseInt(NutsList.get(position).getVal3())]);
         holder.im7.setImageResource(icons[Integer.parseInt(NutsList.get(position).getVal4())]);
-
         Context context = holder.myImage.getContext();
         int id = context.getResources().getIdentifier(NutsList.get(position).getPhoto(), "drawable", context.getPackageName());
         holder.myImage.setImageResource(id);
-
-
-//        holder.userid.setText(NutsList.get(position).getId()+"");
-//        holder.type.setText(NutsList.get(position).getTypes());
 
 
     }

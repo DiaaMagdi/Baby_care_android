@@ -143,12 +143,6 @@
 
 
                     <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/video" />
-
-                    <ImageView
                         android:id="@+id/message_mopile"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
