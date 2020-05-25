@@ -6,6 +6,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.babyinformation.fragments.PageFragment2;
+import com.example.babyinformation.fragments.PageFragment3;
+
 public class Page1 extends AppCompatActivity {
 
 
@@ -17,14 +20,14 @@ public class Page1 extends AppCompatActivity {
 
     }
 
-    public void Location(View view) {
-        Intent intent = new Intent(this, Page2.class);
-        startActivity(intent);
-    }
-
-    public void Speciality(View view) {
-        Intent intent = new Intent(this, Page3.class);
-        startActivity(intent);
-    }
+//    public void Location(View view) {
+//        Intent intent = new Intent(Page1.this, PageFragment2.class);
+//        startActivity(intent);
+//    }
+//
+//    public void Speciality(View view) {
+//        Intent intent = new Intent(Page1.this, PageFragment3.class);
+//        startActivity(intent);
+//    }
 }
 
