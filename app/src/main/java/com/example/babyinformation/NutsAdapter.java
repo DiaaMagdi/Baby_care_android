@@ -24,7 +24,6 @@ public class NutsAdapter extends RecyclerView.Adapter<NutsAdapter.NutsViewHolder
     String data5[];
     int images[];
     int icons[];
-    //    int Line[];
     Context context;
 
 
@@ -39,7 +38,7 @@ public class NutsAdapter extends RecyclerView.Adapter<NutsAdapter.NutsViewHolder
         images = img;
         icons = Icons;
         OnNoteListener = nOnNoteListener;
-//        Line = line;
+
 
 
     }
@@ -84,10 +83,7 @@ public class NutsAdapter extends RecyclerView.Adapter<NutsAdapter.NutsViewHolder
 
 
     public class NutsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        //        TextView nutsNames;
-//          TextView tilteTV;
-//          TextView useridTV;
-//          TextView bodyTV;
+
         TextView nutsNames;
         TextView myText2;
         TextView myText3;
@@ -99,14 +95,11 @@ public class NutsAdapter extends RecyclerView.Adapter<NutsAdapter.NutsViewHolder
         ImageView im;
         ImageView im7;
         OnNoteListener onNoteListener;
-//        ImageView myLine;
-//        TextView userid , type ;
+
 
         public NutsViewHolder(@NonNull View itemView, OnNoteListener onNoteListener) {
             super(itemView);
-//            tilteTV = itemView.findViewById(R.id.titleTV);
-//            useridTV = itemView.findViewById(R.id.userTV);
-//            bodyTV = itemView.findViewById(R.id.bodyTV);
+
             nutsNames = itemView.findViewById(R.id.textView4);
             myText2 = itemView.findViewById(R.id.textView7);
             myText3 = itemView.findViewById(R.id.textView9);
@@ -119,11 +112,6 @@ public class NutsAdapter extends RecyclerView.Adapter<NutsAdapter.NutsViewHolder
             im7 = itemView.findViewById(R.id.imageView7);
             this.onNoteListener = onNoteListener;
             itemView.setOnClickListener(this);
-//            myLine = itemView.findViewById(R.id.imageView8);
-
-
-//            userid = itemView.findViewById(R.id.userTV);
-//            type = itemView.findViewById(R.id.titleTV);
 
         }
 

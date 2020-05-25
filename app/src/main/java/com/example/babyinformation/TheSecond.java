@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -71,14 +72,16 @@ public class TheSecond extends FragmentActivity implements OnMapReadyCallback {
         phone = findViewById(R.id.phone);
         number = findViewById(R.id.number);
         doc_Name = findViewById(R.id.name);
+        int i = getIntent().getIntExtra("Position", 0);
+        doctors_viewModel = ViewModelProviders.of(this).get(Doctors_ViewModel.class);
 
         doctors_viewModel.DoctorsMutableData.observe(this, databases -> {
-            number.setText(databases.get(0).getMobile());
-            doc_mail.setText(databases.get(0).getEmail());
-            doc_Name.setText(databases.get(0).getName());
-            Context context = doctorImg.getContext();
-            int id = context.getResources().getIdentifier(DoctorsList.get(0).getPhoto(), "drawable", context.getPackageName());
-            doctorImg.setImageResource(id);
+            number.setText(databases.get(i).getMobile());
+            doc_mail.setText(databases.get(i).getEmail());
+            doc_Name.setText(databases.get(i).getName());
+//            Context context = doctorImg.getContext();
+//            int id = context.getResources().getIdentifier(DoctorsList.get(i).getPhoto(), "drawable", context.getPackageName());
+//            doctorImg.setImageResource(id);
         });
 
         //Start SMS code

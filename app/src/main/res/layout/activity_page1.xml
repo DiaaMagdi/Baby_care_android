@@ -32,6 +32,8 @@ tools:context=".Page1">
         android:layout_height="wrap_content"
         android:background="@color/buttonpop"
         android:text="Location"
+        android:clickable="true"
+        android:onClick="Location"
         android:textColor="#fff" />
 
     <Button
@@ -41,6 +43,8 @@ tools:context=".Page1">
         android:layout_height="wrap_content"
         android:background="@color/buttonpop"
         android:text="Specialty"
+        android:clickable="true"
+        android:onClick="Speciality"
         android:textColor="#fff" />
 
 </LinearLayout>
