@@ -27,7 +27,7 @@ public class Baby_profile extends AppCompatActivity {
     }
 
     public void vaccination(View view) {
-        Intent Vaccination = new Intent(Baby_profile.this, Vaccination.class);
+        Intent Vaccination = new Intent(Baby_profile.this, Activity_Vaccination.class);
         startActivity(Vaccination);
     }
 
