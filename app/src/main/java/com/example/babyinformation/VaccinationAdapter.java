@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.babyinformation.pojo.Vaccination_ChildrenData;
+
 import java.util.ArrayList;
 
 public class VaccinationAdapter extends RecyclerView.Adapter<VaccinationAdapter.MyViewHolder> {
@@ -44,6 +46,11 @@ public class VaccinationAdapter extends RecyclerView.Adapter<VaccinationAdapter.
     @Override
     public int getItemCount() {
         return vaccinationList.size();
+    }
+
+    public void setList(ArrayList<Vaccine> vaccinationList){
+        this.vaccinationList = vaccinationList;
+        notifyDataSetChanged();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

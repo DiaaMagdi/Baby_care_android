@@ -1,4 +1,4 @@
-package com.example.babyinformation;
+package com.example.babyinformation.pojo;
 
 public class Vaccination_ChildrenData {
     private int id;
