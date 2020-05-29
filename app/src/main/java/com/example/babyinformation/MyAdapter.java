@@ -40,6 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.myText1.setText(data1[position]);
         holder.myText2.setText(DoctorsList.get(position).getName());
         holder.myText3.setText(DoctorsList.get(position).getAddress());
+        holder.Speciality.setText(DoctorsList.get(position).getSpecialty());
         holder.myImage.setImageResource(images[position]);
 
 
@@ -68,7 +69,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView myText1, myText2, myText3;
+        TextView myText1, myText2, myText3,Speciality;
         ImageView myImage;
         ConstraintLayout mainLayout;
 
@@ -77,6 +78,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             myText1 = itemView.findViewById(R.id.myText1);
             myText2 = itemView.findViewById(R.id.myText2);
             myText3 = itemView.findViewById(R.id.myText3);
+            Speciality = itemView.findViewById(R.id.Speciality);
             myImage = itemView.findViewById(R.id.myImageView);
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }

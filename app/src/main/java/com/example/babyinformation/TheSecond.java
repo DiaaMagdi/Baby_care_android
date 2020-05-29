@@ -31,12 +31,12 @@ import java.util.List;
 public class TheSecond extends FragmentActivity implements OnMapReadyCallback {
 
     Doctors_ViewModel doctors_viewModel;
-    private List<DoctorsDatabase> DoctorsList = new ArrayList<>();
+
 
     private GoogleMap mMap;
 
     ImageView img, arrow_back, phone, fav_button, mail, doctorImg;
-    TextView number, doc_mail, doc_Name;
+    TextView number, doc_mail, doc_Name, Spe;
 
     int counter = 0;
     int[] favImages = {R.drawable.fav2, R.drawable.fav};
@@ -72,6 +72,7 @@ public class TheSecond extends FragmentActivity implements OnMapReadyCallback {
         phone = findViewById(R.id.phone);
         number = findViewById(R.id.number);
         doc_Name = findViewById(R.id.name);
+        Spe = findViewById(R.id.Spe);
         int i = getIntent().getIntExtra("Position", 0);
         doctors_viewModel = ViewModelProviders.of(this).get(Doctors_ViewModel.class);
 
@@ -79,9 +80,10 @@ public class TheSecond extends FragmentActivity implements OnMapReadyCallback {
             number.setText(databases.get(i).getMobile());
             doc_mail.setText(databases.get(i).getEmail());
             doc_Name.setText(databases.get(i).getName());
-//            Context context = doctorImg.getContext();
-//            int id = context.getResources().getIdentifier(DoctorsList.get(i).getPhoto(), "drawable", context.getPackageName());
-//            doctorImg.setImageResource(id);
+            Spe.setText(databases.get(i).getSpecialty());
+            Context context = doctorImg.getContext();
+            int id = context.getResources().getIdentifier(databases.get(i).getPhoto(), "drawable", context.getPackageName());
+            doctorImg.setImageResource(id);
         });
 
         //Start SMS code
