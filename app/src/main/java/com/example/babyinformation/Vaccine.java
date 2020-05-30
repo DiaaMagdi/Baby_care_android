@@ -23,8 +23,8 @@ public class Vaccine {
             vaccines.add(new Vaccine_General("Hepatitis B: 1st dose", 0));
             vaccines.add(new Vaccine_General("Tuberculosis", 0));
 
-            vaccines.add(new Vaccine_General("Hepatitis B: 2nd dose at 1 to 2 months", 60));//2 months
-            vaccines.add(new Vaccine_General("Meningococcal: 2 months through 18 years for certain high risk groups", 60));//2 months
+            vaccines.add(new Vaccine_General("Hepatitis B: 2nd dose", 60));//2 months
+            vaccines.add(new Vaccine_General("Meningococcal", 60));//2 months
 
             vaccines.add(new Vaccine_General("DTaP (Diphtheria, Tetanus and Pertussis): 1st dose", 60));//4 months
             vaccines.add(new Vaccine_General("Hib (Haemphilus influenzae type b): 1st dose", 60));//6 months
@@ -38,30 +38,30 @@ public class Vaccine {
             vaccines.add(new Vaccine_General("Polio (IPV): 2nd dose", 120));
             vaccines.add(new Vaccine_General("Rotavirus )RV(: 2nd dose", 120));
 
-            vaccines.add(new Vaccine_General("Influenza: yearly beginning at 6 months", 180));//TODO: set this to yearly
+            vaccines.add(new Vaccine_General("Influenza", 180));
 
-            vaccines.add(new Vaccine_General("Hepatitis B: 3rd dose at 6 to 18 months", 180));
-            vaccines.add(new Vaccine_General("Polio (IPV): 3rd dose at 6 to 18 months", 180));
+            vaccines.add(new Vaccine_General("Hepatitis B: 3rd dose", 180));
+            vaccines.add(new Vaccine_General("Polio (IPV): 3rd dose", 180));
 
             vaccines.add(new Vaccine_General("DTaP (Diphtheria, Tetanus and Pertussis): 3rd dose", 180));
-            vaccines.add(new Vaccine_General("Hib (Haemphilus influenzae type b): 3rd dose depending on Vaccine series", 180));
+            vaccines.add(new Vaccine_General("Hib (Haemphilus influenzae type b): 3rd dose", 180));
             vaccines.add(new Vaccine_General("Pneumococcal Conjugate (PCV13): 3rd dose", 180));
             vaccines.add(new Vaccine_General("Rotavirus (RV): if 3 dose Vaccine series", 180));
 
-            vaccines.add(new Vaccine_General("Hib (Haemphilus influenzae type b): 3rd or 4th dose at 12 to 15 months depending on Vaccine series", 365));
-            vaccines.add(new Vaccine_General("Pneumococcal Conjugate (PCV13): 4th dose at 12 to 15 months", 365));
-            vaccines.add(new Vaccine_General("Measles, Mumps, Rubella )MMR(: 1st dose at 12 to 15 months", 365));
-            vaccines.add(new Vaccine_General("Varicella: 1st dose at 12 to 15 months", 365));
-            vaccines.add(new Vaccine_General("Hepatitis A: 1st and 2nd dose at 12 to 23 months (given as 2 doses that are 6 months apart)", 365));
+            vaccines.add(new Vaccine_General("Hib (Haemphilus influenzae type b): 3rd or 4th dose", 365));
+            vaccines.add(new Vaccine_General("Pneumococcal Conjugate (PCV13): 4th dose", 365));
+            vaccines.add(new Vaccine_General("Measles, Mumps, Rubella )MMR(: 1st dose", 365));
+            vaccines.add(new Vaccine_General("Varicella: 1st dose", 365));
+            vaccines.add(new Vaccine_General("Hepatitis A: 1st and 2nd dose", 365));
 
-            vaccines.add(new Vaccine_General("DTaP (Diphtheria, Tetanus & Pertussis): 4th dose at 15 to 18 months", 450));
+            vaccines.add(new Vaccine_General("DTaP (Diphtheria, Tetanus & Pertussis): 4th dose", 450));
 
-            vaccines.add(new Vaccine_General("Pneumococcal polysac-charide (PPSV23): 2 years through 18 years for certain high risk groups", 730));
+            vaccines.add(new Vaccine_General("Pneumococcal polysac-charide (PPSV23)", 730));
 
-            vaccines.add(new Vaccine_General("DTaP (Diphtheria, Tetanus and Pertussis(: 5th dose at 4 years to 6 years old", 1460));
-            vaccines.add(new Vaccine_General("Polio )IPV(: 4th dose at 4 years to 6 years old", 1460));
-            vaccines.add(new Vaccine_General("Measles, Mumps, Rubella )MMR(: 2nd dose at 4 years to 6 years old", 1460));
-            vaccines.add(new Vaccine_General("Varicella: 2nd dose at 4 years to 6 years old", 1460));
+            vaccines.add(new Vaccine_General("DTaP (Diphtheria, Tetanus and Pertussis): 5th dose", 1460));
+            vaccines.add(new Vaccine_General("Polio (IPV): 4th dose", 1460));
+            vaccines.add(new Vaccine_General("Measles, Mumps, Rubella (MMR): 2nd dose", 1460));
+            vaccines.add(new Vaccine_General("Varicella: 2nd dose", 1460));
 
         }
     }
