@@ -93,8 +93,6 @@ public class Vaccine {
             }
         }
 
-        //TODO: if there is two vaccination for the same kid at the same data, don't separate them.......
-
         ArrayList<Vaccine> vaccinationList = new ArrayList<>();
         int flag = 0;
         while (flag == 0) {
@@ -104,12 +102,26 @@ public class Vaccine {
                     continue;
                 flag = 0;
 
-                Vaccine_General vaccine = Vaccine_General.vaccines.get(nxt_vacc_indx.get(j));
                 Vaccination_ChildrenData child = children.get(j);
-                vaccinationList.add(new Vaccine(child.getName(), vaccine.name, daysToDate(child.getBirthdate(), vaccine.days_post_birth)));
+                while(true) {
+                    Vaccine_General vaccine_info = Vaccine_General.vaccines.get(nxt_vacc_indx.get(j));
+                    vaccinationList.add(new Vaccine(child.getName(), vaccine_info.name, daysToDate(child.getBirthdate(), vaccine_info.days_post_birth)));
 
-                int new_indx = nxt_vacc_indx.get(j) + 1;
-                nxt_vacc_indx.set(j, new_indx >= Vaccine_General.vaccines.size()?-1:new_indx);
+                    int new_indx = nxt_vacc_indx.get(j) + 1;
+                    if(new_indx >= Vaccine_General.vaccines.size()) // index out of bound
+                    {
+                        nxt_vacc_indx.set(j,-1);
+                        break;
+                    }
+                    else{ // there is a next index, maybe the same duration or not
+                        nxt_vacc_indx.set(j, new_indx);
+                        Vaccine_General new_vaccine_info = Vaccine_General.vaccines.get(nxt_vacc_indx.get(j));
+
+                        //if it is the same duration continue in the loop. else, break;
+                        if(vaccine_info.days_post_birth != new_vaccine_info.days_post_birth)
+                            break;
+                    }
+                }
             }
         }
         return vaccinationList;

@@ -6,11 +6,12 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface BackendInterface {
 
     /// Vaccination ////////////////////////////////////////////////////////////////////////////////
-    @GET("api/json/get/41x2tjVsu")
-    public Call<List<Vaccination_ChildrenData>> getChildren();
+    @GET("public/api/babyinfo/{mother_id}")
+    public Call<List<Vaccination_ChildrenData>> getChildren(@Path("mother_id") int PostId);
 
 }

@@ -23,8 +23,8 @@ public class VaccinationViewModel extends ViewModel {
         childrenMutableLiveData.setValue(new ArrayList<>());
     }
 
-    public void getChildren(){
-        BackendClient.getInstance().getChildren().enqueue(new Callback<List<Vaccination_ChildrenData>>() {
+    public void getChildren(int mother_id){
+        BackendClient.getInstance().getChildren(mother_id).enqueue(new Callback<List<Vaccination_ChildrenData>>() {
             @Override
             public void onResponse(Call<List<Vaccination_ChildrenData>> call, Response<List<Vaccination_ChildrenData>> response) {
                 childrenMutableLiveData.setValue(response.body());

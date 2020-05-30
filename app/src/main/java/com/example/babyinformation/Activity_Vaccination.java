@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -41,7 +42,8 @@ public class Activity_Vaccination extends AppCompatActivity {
         */
 
         vaccinationViewModel = ViewModelProviders.of(this).get(VaccinationViewModel.class);
-        vaccinationViewModel.getChildren();
+        String motherId = getIntent().getStringExtra("mother_id");
+        vaccinationViewModel.getChildren(Integer.parseInt(motherId));
 
         recyclerView = findViewById(R.id.recyclarView);
         VaccinationAdapter adapter = new VaccinationAdapter(vaccinationList, this);

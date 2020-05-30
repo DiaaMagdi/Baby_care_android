@@ -9,7 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BackendClient {
-    public static final String BASE_URL = "https://next.json-generator.com/";
+    public static final String BASE_URL = "https://babycaregaduation.000webhostapp.com/";
     private BackendInterface backendInterface;
     private static BackendClient instance;
 
@@ -28,7 +28,7 @@ public class BackendClient {
         return instance;
     }
 
-    public Call<List<Vaccination_ChildrenData>> getChildren(){
-        return backendInterface.getChildren();
+    public Call<List<Vaccination_ChildrenData>> getChildren(int mother_id){
+        return backendInterface.getChildren(mother_id);
     }
 }
