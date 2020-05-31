@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.babyinformation.Remainder.ReminderMain;
+
 public class parent_profile extends AppCompatActivity {
 
     private Button btn_baby;
@@ -34,12 +36,20 @@ public class parent_profile extends AppCompatActivity {
 
     public void tips(View view) {
 
+
+            Intent intent = new Intent(parent_profile.this, ReminderMain.class);
+            startActivity(intent);
+
     }
 
     public void Diet(View view) {
         Intent intent = new Intent(parent_profile.this, Food.class);
         startActivity(intent);
     }
+
+
+
+
 
 
     public void settingbaby(View view) {

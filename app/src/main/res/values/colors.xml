@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff5f70</color>
+    <color name="colorPrimary">#ff939c</color>
     <color name="colorPrimaryDark">#ff939c</color>
     <color name="colorAccent">#D81B60</color>
     <color name="foshya">#A6E0828A</color>
@@ -23,6 +23,7 @@
     <color name="bg_bubble_self">#62caa6</color>
     <color name="bg_bubble_watbot">#ecf0f1</color>
     <color name="transparent">#fff2f2</color>
+    <color name="fab_pressed">#546e7a</color>
 
 
 
