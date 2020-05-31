@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginBottom="7dp"
+android:layout_marginEnd="10dp"
+android:layout_marginStart="10dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+
+    <ImageView
+        android:id="@+id/childImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="4dp" />
+
+    <TextView
+        android:id="@+id/vacc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/childImage"
+        android:text="Vaccination"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/childName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vacc"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/childImage"
+        android:text="Ahmed Reda"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/vaccName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/childImage"
+        android:layout_marginStart="25dp"
+        android:onClick="sendNotification"
+        android:text="Measles"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/vaccDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vaccName"
+        android:layout_marginStart="25dp"
+        android:text="12 may"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>

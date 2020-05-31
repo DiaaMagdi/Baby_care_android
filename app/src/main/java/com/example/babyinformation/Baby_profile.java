@@ -27,8 +27,10 @@ public class Baby_profile extends AppCompatActivity {
     }
 
     public void vaccination(View view) {
-        Intent Vaccination = new Intent(Baby_profile.this, Vaccination.class);
-        startActivity(Vaccination);
+        Intent vaccination_intent = new Intent(Baby_profile.this, Activity_Vaccination.class);
+        //TODO: send the mother's id/token in the next intent for viewing the mother's own children's vaccination
+        vaccination_intent.putExtra("mother_id","1");
+        startActivity(vaccination_intent);
     }
 
     public void funny(View view) {
