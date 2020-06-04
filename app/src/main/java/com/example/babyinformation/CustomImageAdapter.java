@@ -62,6 +62,7 @@ public class CustomImageAdapter extends RecyclerView.Adapter<CustomImageAdapter.
         });
         holder.imageView.setImageBitmap(_data.get(position).getImage());
 
+
         // need some calculaation from the real image going to be in the card
         holder.imageView.getLayoutParams().height = getRandomIntInRange(350,250);
 

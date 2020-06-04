@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 
 public class funny extends AppCompatActivity {
 
+    PhotosViewModel photosViewModel;
     CustomImageAdapter customImageAdapter;
     ArrayList<GetSet> getSets;
     RecyclerView rv;
@@ -36,14 +38,13 @@ public class funny extends AppCompatActivity {
     String imageTempName;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_funny);
 
-
-        rv =  findViewById(R.id.captureList);
+        photosViewModel = ViewModelProviders.of(this).get(PhotosViewModel.class);
+        rv = findViewById(R.id.captureList);
         capCam = findViewById(R.id.cam_btn);
         getSets = new ArrayList<GetSet>();
 
@@ -59,10 +60,13 @@ public class funny extends AppCompatActivity {
 //            getSets.add(inflate);
 //        }
         rv.setHasFixedSize(true);
-        mLayoutManager = new StaggeredGridLayoutManager(3 , LinearLayoutManager.VERTICAL);
+        mLayoutManager = new StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(mLayoutManager);
         customImageAdapter = new CustomImageAdapter(getSets);
         rv.setAdapter(customImageAdapter);
+        photosViewModel.PhotosMutableData.observe(this, databases -> {
+            customImageAdapter.setData((ArrayList<GetSet>) databases);
+        });
 
         capCam.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,13 +77,12 @@ public class funny extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 // The 'which' argument contains the index position
                                 // of the selected item
-                                if(which == 0){
+                                if (which == 0) {
                                     Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                                    startActivityForResult(i,CAM_CODE);
-                                }
-                                else if(which == 1){
+                                    startActivityForResult(i, CAM_CODE);
+                                } else if (which == 1) {
                                     Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                                    startActivityForResult(i,GALLERY_CODE);
+                                    startActivityForResult(i, GALLERY_CODE);
                                 }
                             }
                         }).show();
@@ -120,9 +123,9 @@ public class funny extends AppCompatActivity {
 //        String picturePath = getRealPathFromURI(tempUri);
 
 
-        GetSet image = new GetSet();
-        image.setImage(data);
-        getSets.add(image);
+        GetSet images = new GetSet();
+        images.setImage(data);
+        getSets.add(images);
         customImageAdapter.setData(getSets);
 
 //        customImageAdapter.setImageInItem(position, imageBitmap, picturePath);
@@ -131,7 +134,7 @@ public class funny extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == RESULT_CANCELED){
+        if (resultCode == RESULT_CANCELED) {
             return;
         }
         if (requestCode == GALLERY_CODE) {
