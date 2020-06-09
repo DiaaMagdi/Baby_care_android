@@ -60,7 +60,7 @@ public class Babycry extends AppCompatActivity {
         record =  findViewById(R.id.record);
         cancel = findViewById(R.id.cancel);
         fileName = getExternalCacheDir().getAbsolutePath();
-        fileName += "/baby_cry_record.wav";
+        fileName += "/baby_cry_record.mp3";
 
         record.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
