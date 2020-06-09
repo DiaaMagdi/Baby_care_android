@@ -12,8 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="-235dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,7 +80,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="24dp"
                 android:autofillHints=""
-                android:background="@drawable/editround"
+                android:background="@drawable/uploadsalary"
                 android:fontFamily="sans-serif"
                 android:hint="@string/Sallary"
                 android:inputType="numberDecimal"
@@ -173,24 +174,43 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Area" />
 
-<!--            <Button-->
-<!--                android:id="@+id/uploadphoto"-->
-<!--                android:layout_width="220dp"-->
-<!--                android:layout_height="40dp"-->
-<!--                android:layout_marginTop="24dp"-->
-<!--                android:autofillHints=""-->
-<!--                android:background="@drawable/drawableright"-->
-<!--                android:fontFamily="sans-serif"-->
-<!--                android:paddingLeft="20dp"-->
-<!--                android:paddingRight="20dp"-->
-<!--                android:textColor="#FF5F70"-->
-<!--                android:textColorHint="#A6E0828A"-->
-<!--                android:textSize="16sp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.502"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/Description" />-->
+            <Button
+                android:id="@+id/btn_1"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:autofillHints=""
+                android:background="@drawable/uploadphoto"
+                android:fontFamily="sans-serif"
+                android:hint="Upload a photo of you"
+                android:textAlignment="viewStart"
+                android:textColor="#FF5F70"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Description" />
 
+            <Button
+                android:id="@+id/btn_2"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:autofillHints=""
+                android:background="@drawable/uploadphoto"
+                android:fontFamily="sans-serif"
+                android:hint="Upload a photo of your ID"
+                android:textAlignment="viewStart"
+                android:textColor="#FF5F70"
+                android:textColorHint="@color/colorPrimary"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_1" />
 
             <Button
                 android:id="@+id/nextbut"

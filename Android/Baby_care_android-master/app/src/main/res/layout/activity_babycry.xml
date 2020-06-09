@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Babycry"
+    android:background="@color/babysetting">
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textSize="32sp"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="50dp"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="130dp"
+        android:layout_height="3dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/result"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/StatusCry"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/cancel"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/record"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/cancel" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mic"
+        android:layout_above="@+id/second"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    <TextView
+        android:id="@+id/second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progressbar"
+        android:text="Tap to record 10 seconds"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_centerHorizontal="true"/>
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+</RelativeLayout>

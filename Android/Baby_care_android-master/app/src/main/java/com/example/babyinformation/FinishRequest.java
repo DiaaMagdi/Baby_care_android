@@ -1,5 +1,6 @@
 package com.example.babyinformation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,10 +42,15 @@ public class FinishRequest extends AppCompatActivity {
                 //check validation
                 if (awesomeValidation.validate()) {
                     //on success
-                    Toast.makeText(getApplicationContext() , "Here ..",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext() , "your request has sent",Toast.LENGTH_SHORT).show();
+                    openActivity2();
                 }
             }
         });
 
+    }
+    public void openActivity2() {
+        Intent intent = new Intent(this, CancelRequest.class);
+        startActivity(intent);
     }
 }

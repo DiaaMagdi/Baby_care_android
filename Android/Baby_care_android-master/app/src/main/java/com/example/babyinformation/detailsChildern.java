@@ -35,8 +35,6 @@ public class detailsChildern extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_childern);
 
-        buttonContinue = (Button) findViewById(R.id.buttonContinue);
-
         //////////////////////////////////////////////// start Date /////////////////////////////////////////////////
         cal = (TextView) findViewById(R.id.Date);
         mCurrentdDate = Calendar.getInstance();
@@ -71,6 +69,7 @@ public class detailsChildern extends AppCompatActivity {
         //add validation for address
         awesomeValidation.addValidation(this, R.id.edittext,RegexTemplate.NOT_EMPTY,R.string.invalid_address);
 
+        buttonContinue = (Button) findViewById(R.id.buttonContinue);
         buttonContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundmain"
+    tools:context=".Welcome">
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/baby_care"
+        android:textColor="#FFD8DB"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:shadowColor="#CC000000"
+        android:shadowDx="4"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:textSize="40sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/text_view"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/logo"
+        android:contentDescription="TODO" />
+
+    <Button
+        android:id="@+id/button_signup"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btn_signup"
+        android:textColor="#FF5F70"
+        android:textStyle="bold"
+        android:background="@drawable/editround"
+        />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/button_signup"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btn_login"
+        android:textColor="#FF5F70"
+        android:textStyle="bold"
+        android:background="@drawable/editround"/>
+
+</RelativeLayout>

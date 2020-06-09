@@ -38,6 +38,7 @@ public class order extends AppCompatActivity {
     }
     public void openActivity1() {
         Intent intent = new Intent(this, orderlist.class);
+        Toast.makeText(getApplicationContext() , "Your Request is rejected ..",Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
     public void openActivity2() {

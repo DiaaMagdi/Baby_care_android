@@ -14,7 +14,6 @@ public class AddBabySitter extends AppCompatActivity {
 
     FloatingActionButton floatingActionButton3;
     RecyclerView recyclerView3;
-
     String s1[], s2[], s3[];
     int images[] = {R.drawable.logo, R.drawable.logo, R.drawable.logo, R.drawable.logo, R.drawable.logo};
 
@@ -27,8 +26,8 @@ public class AddBabySitter extends AppCompatActivity {
         floatingActionButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddBabySitter.this,PopUp.class);
-                startActivity(intent);
+                PopUpBabySitter popUp = new PopUpBabySitter();
+                popUp.show(getSupportFragmentManager(), "Example bottom sheet");
             }
         });
         recyclerView3 = findViewById(R.id.recyclerView3);
@@ -42,12 +41,8 @@ public class AddBabySitter extends AppCompatActivity {
         recyclerView3.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    public void changerequest(View view) {
-        openActivity();
-
-    }
-    public void openActivity() {
-        Intent intent = new Intent(this, changerequest.class);
+    public void CancelRequest(View view) {
+        Intent intent = new Intent(this, CancelRequest.class);
         startActivity(intent);
     }
 }

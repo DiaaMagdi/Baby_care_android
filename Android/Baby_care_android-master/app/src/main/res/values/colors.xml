@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff5f70</color>
+    <color name="colorPrimaryDark">#ff939c</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="foshya">#A6E0828A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="tent">#e0828a</color>
+    <color name="tenttran">#A6E0828A</color>
+    <color name="colorControlActivated">#FF5F70</color>
+    <color name="bink">#fcdbdb</color>
+    <color name="HotPink">#ff69b4</color>
+    <color name="DeepPinK">#ff1493</color>
+    <color name="LightCoraL">#f08080</color>
+    <color name="LeightPink">#FFCCBD</color>
+    <color name="DarkPink">#FFB7B3</color>
+    <color name="backpop">#ff939c</color>
+    <color name="buttonpop">#ff5f70</color>
+    <color name="floatbutton">#006fff</color>
+    <color name="babysetting">#ffd8db</color>
+    <color name="black">#000</color>
+    <color name="settingitem">#ffeff0</color>
+    <color name="bg_bubble_self">#62caa6</color>
+    <color name="bg_bubble_watbot">#ecf0f1</color>
+    <color name="transparent">#fff2f2</color>
+    <color name="sdk">#FFF2F2</color>
+    <color name="sdk1">#FFC6CC</color>
+    <color name="gray">#858585</color>
+
+
+
+</resources>
+

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class profile_Babysitter extends AppCompatActivity {
 
      private Button button1;
+     RatingBar ratingBar;
 
     @TargetApi(Build.VERSION_CODES.O)
     @Override
@@ -21,8 +22,7 @@ public class profile_Babysitter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile__babysitter);
 
-        final RatingBar ratingBar = findViewById(R.id.ratingBar);
-
+        RatingBar ratingBar = findViewById(R.id.ratingBar);
         button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +37,8 @@ public class profile_Babysitter extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void rating(View view) {
-        Toast.makeText(getApplicationContext() , "Rating is : ",Toast.LENGTH_SHORT).show();
-
-    }
+//    public void rating(View view) {
+//        Toast.makeText(getApplicationContext() , "Rating is : ",Toast.LENGTH_SHORT).show();
+//
+//    }
 }
