@@ -21,7 +21,7 @@
             android:id="@+id/map"
             tools:context=".TheSecond"
             android:name="com.google.android.gms.maps.SupportMapFragment"
-            tools:layout="@layout/activity_the_second" />
+            tools:layout="@layout/activity_second" />
 
     </RelativeLayout>
 
