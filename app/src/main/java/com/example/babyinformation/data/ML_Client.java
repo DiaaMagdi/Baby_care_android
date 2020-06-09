@@ -8,7 +8,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ML_Client {
-    public static final String BASE_URL = "http://192.168.43.105/";
+    public static final String BASE_URL = "http://35.184.192.172/";
     private ML_interface ml_interface;
     private static ML_Client instance;
 

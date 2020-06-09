@@ -60,8 +60,7 @@ public class Babycry extends AppCompatActivity {
         record =  findViewById(R.id.record);
         cancel = findViewById(R.id.cancel);
         fileName = getExternalCacheDir().getAbsolutePath();
-        fileName += "/baby_cry_record.mp3";
-
+        fileName += "/baby_cry_record.wav";
 
         record.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -86,13 +85,13 @@ public class Babycry extends AppCompatActivity {
         recorder = new MediaRecorder();
         file = new File(fileName);
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         //recorder.setOutputFile(fileName);
         recorder.setOutputFile(file);
         //// recorder.setAudioEncodingBitRate();  TODO
-        //// recorder.setAudioSamplingRate();     TODO
+        recorder.setAudioSamplingRate(8000);
         recorder.setMaxDuration(10000); // 10 seconds
-        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
         cancel.setVisibility(View.VISIBLE);
         record.setEnabled(false);
 

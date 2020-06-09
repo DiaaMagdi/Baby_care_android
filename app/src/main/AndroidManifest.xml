@@ -29,7 +29,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Babies_setting"></activity>
+        <activity android:name=".Babies_setting" />
         <activity android:name=".detailsfood" />
         <activity android:name=".Nuts" />
         <activity android:name=".Food" />
@@ -75,7 +75,7 @@
         <activity android:name=".chat" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity android:name=".login" />
         <activity android:name=".Baby_information" />
         <activity android:name=".Baby_information2" />
