@@ -38,19 +38,38 @@
         android:layout_below="@+id/line"
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnStart"
+        android:text="@string/start_recording"
+        android:layout_weight="1.0"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnStop"
+        android:text="@string/stop_recording"
+        android:layout_weight="1.0"
+></Button>
+    </LinearLayout>
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/cancel"
+        android:id="@+id/Stop"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_above="@+id/record"
+        android:layout_above="@+id/Start"
         android:layout_centerHorizontal="true"
         android:visibility="invisible"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/cancel" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/record"
+        android:id="@+id/Start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/mic"
