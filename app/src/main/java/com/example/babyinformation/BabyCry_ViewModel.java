@@ -17,7 +17,7 @@ public class BabyCry_ViewModel extends ViewModel {
     MutableLiveData<ML_CryReason> cryReasonMutableLiveData = new MutableLiveData<>();
 
     public BabyCry_ViewModel() {
-        cryReasonMutableLiveData.setValue(new ML_CryReason("No cry", "Sucsess")); //TODO
+        cryReasonMutableLiveData.setValue(new ML_CryReason("Processing audio", "Sucsess")); //TODO
     }
 
     public void getCryReason(MultipartBody.Part baby_cry_record_map){

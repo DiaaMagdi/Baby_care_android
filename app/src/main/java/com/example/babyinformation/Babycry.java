@@ -1,5 +1,6 @@
 package com.example.babyinformation;
 
+import android.content.pm.PackageManager;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
@@ -8,12 +9,14 @@ import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -29,6 +32,9 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
+import static android.Manifest.permission.RECORD_AUDIO;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 public class Babycry extends AppCompatActivity {
     private static final int RECORDER_BPP = 16;
     private static final String AUDIO_RECORDER_FILE_EXT_WAV = ".wav";
@@ -37,33 +43,51 @@ public class Babycry extends AppCompatActivity {
     private static final int RECORDER_SAMPLERATE = 44100;
     private static final int RECORDER_CHANNELS = AudioFormat.CHANNEL_IN_STEREO;
     private static final int RECORDER_AUDIO_ENCODING = AudioFormat.ENCODING_PCM_16BIT;
-
+    public int STORAGE_PERMISSION=1;
+    public static final int REQUEST_AUDIO_PERMISSION_CODE = 1;
     private AudioRecord recorder = null;
     private int bufferSize = 0;
     private Thread recordingThread = null;
     private boolean isRecording = false;
     private ImageButton record;
-    private ImageButton cancel;
+    private ImageButton stop;
     private ProgressBar mprogressbar;
     private TextView mfinish;
-
-    boolean isStart =true;
-    private MediaRecorder recorderr;
+    boolean isStart = true;
     private int mprogressstatus = 0;
     private String fileName = null;
     private static final String LOG_TAG = "Record_log";
     private Handler mhandler = new Handler();
-    //private BabyCry_ViewModel CryingReason;
     File file;
     File file1;
     public BabyCry_ViewModel CryingReason;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_babycry);
 
+//        cancel = findViewById(R.id.cancel);
         mfinish = findViewById(R.id.finish);
-        BabyCry_ViewModel CryingReason = ViewModelProviders.of(Babycry.this).get(BabyCry_ViewModel.class);
+        mprogressbar = findViewById(R.id.progressbar);
+        record = findViewById(R.id.btnStart);
+        stop = findViewById(R.id.btnStop);
+
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopRecording();
+            }
+        });
+//        cancel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                diposeRecording();
+//                record.setEnabled(true);
+//            }
+//        });
+
+        CryingReason = ViewModelProviders.of(Babycry.this).get(BabyCry_ViewModel.class);
         CryingReason.cryReasonMutableLiveData.observe(this, new Observer<ML_CryReason>() {
             @Override
             public void onChanged(ML_CryReason ml_cryReason) {
@@ -72,7 +96,6 @@ public class Babycry extends AppCompatActivity {
         });
 
         setButtonHandlers();
-        enableButtons(false);
 
         bufferSize = AudioRecord.getMinBufferSize(8000,
                 AudioFormat.CHANNEL_CONFIGURATION_MONO,
@@ -80,54 +103,55 @@ public class Babycry extends AppCompatActivity {
     }
 
     private void setButtonHandlers() {
-        ((Button)findViewById(R.id.btnStart)).setOnClickListener(btnClick);
-        ((Button)findViewById(R.id.btnStop)).setOnClickListener(btnClick);
+        ((ImageButton) findViewById(R.id.btnStart)).setOnClickListener(btnClick);
+        ((ImageButton) findViewById(R.id.btnStop)).setOnClickListener(btnClick);
     }
 
-    private void enableButton(int id,boolean isEnable){
-        ((Button)findViewById(id)).setEnabled(isEnable);
+    private void enableButton(int id, boolean isEnable) {
+        ((ImageButton) findViewById(id)).setEnabled(isEnable);
     }
 
     private void enableButtons(boolean isRecording) {
-        enableButton(R.id.btnStart,!isRecording);
-        enableButton(R.id.btnStop,isRecording);
+        enableButton(R.id.btnStart, !isRecording);
+        enableButton(R.id.btnStop, isRecording);
     }
 
-    private String getFilename(){
+    private String getFilename() {
         String filepath = Environment.getExternalStorageDirectory().getPath();
-         file = new File(filepath,AUDIO_RECORDER_FOLDER);
+        file = new File(filepath, AUDIO_RECORDER_FOLDER);
 
-        if(!file.exists()){
+        if (!file.exists()) {
             file.mkdirs();
         }
-        long timeMillis = System.currentTimeMillis();
-        file1 = new File(file.getName() + "/" + timeMillis + AUDIO_RECORDER_FILE_EXT_WAV);
-        return (file.getAbsolutePath() + "/" + timeMillis + AUDIO_RECORDER_FILE_EXT_WAV);
+        // long timeMillis = System.currentTimeMillis();
+
+        return (file.getAbsolutePath() + "/" + "Baby_cry_record" + AUDIO_RECORDER_FILE_EXT_WAV);
     }
 
-    private String getTempFilename(){
+    private String getTempFilename() {
         String filepath = Environment.getExternalStorageDirectory().getPath();
-        File file = new File(filepath,AUDIO_RECORDER_FOLDER);
+        File file = new File(filepath, AUDIO_RECORDER_FOLDER);
 
-        if(!file.exists()){
+        if (!file.exists()) {
             file.mkdirs();
         }
 
-        File tempFile = new File(filepath,AUDIO_RECORDER_TEMP_FILE);
+        File tempFile = new File(filepath, AUDIO_RECORDER_TEMP_FILE);
 
-        if(tempFile.exists())
+        if (tempFile.exists())
             tempFile.delete();
 
         return (file.getAbsolutePath() + "/" + AUDIO_RECORDER_TEMP_FILE);
     }
 
-    private void startRecording(){
+    private void startRecording() {
         recorder = new AudioRecord(MediaRecorder.AudioSource.MIC,
-                RECORDER_SAMPLERATE, RECORDER_CHANNELS,RECORDER_AUDIO_ENCODING, bufferSize);
+                RECORDER_SAMPLERATE, RECORDER_CHANNELS, RECORDER_AUDIO_ENCODING, bufferSize);
 
         int i = recorder.getState();
-        if(i==1)
+        if (i == 1)
             recorder.startRecording();
+//        stop.setVisibility(View.VISIBLE);
 
         isRecording = true;
 
@@ -137,12 +161,14 @@ public class Babycry extends AppCompatActivity {
             public void run() {
                 writeAudioDataToFile();
             }
-        },"AudioRecorder Thread");
+        }, "AudioRecorder Thread");
 
         recordingThread.start();
+//        cancel.setVisibility(View.VISIBLE);
+
     }
 
-    private void writeAudioDataToFile(){
+    private void writeAudioDataToFile() {
         byte data[] = new byte[bufferSize];
         String filename = getTempFilename();
         FileOutputStream os = null;
@@ -156,11 +182,11 @@ public class Babycry extends AppCompatActivity {
 
         int read = 0;
 
-        if(null != os){
-            while(isRecording){
+        if (null != os) {
+            while (isRecording) {
                 read = recorder.read(data, 0, bufferSize);
 
-                if(AudioRecord.ERROR_INVALID_OPERATION != read){
+                if (AudioRecord.ERROR_INVALID_OPERATION != read) {
                     try {
                         os.write(data);
                     } catch (IOException e) {
@@ -177,21 +203,21 @@ public class Babycry extends AppCompatActivity {
         }
     }
 
-    private void stopRecording(){
-        if(null != recorder){
+    private void stopRecording() {
+        if (null != recorder) {
             isRecording = false;
 
             int i = recorder.getState();
-            if(i==1)
+            if (i == 1)
                 recorder.stop();
             recorder.release();
-
             recorder = null;
             recordingThread = null;
         }
 
-        copyWaveFile(getTempFilename(),getFilename());
+        copyWaveFile(getTempFilename(), getFilename());
         deleteTempFile();
+        send();
     }
 
     private void deleteTempFile() {
@@ -200,14 +226,14 @@ public class Babycry extends AppCompatActivity {
         file.delete();
     }
 
-    private void copyWaveFile(String inFilename,String outFilename){
+    private void copyWaveFile(String inFilename, String outFilename) {
         FileInputStream in = null;
         FileOutputStream out = null;
         long totalAudioLen = 0;
         long totalDataLen = totalAudioLen + 36;
         long longSampleRate = RECORDER_SAMPLERATE;
         int channels = 2;
-        long byteRate = RECORDER_BPP * RECORDER_SAMPLERATE * channels/8;
+        long byteRate = RECORDER_BPP * RECORDER_SAMPLERATE * channels / 8;
 
         byte[] data = new byte[bufferSize];
         try {
@@ -221,16 +247,10 @@ public class Babycry extends AppCompatActivity {
             WriteWaveFileHeader(out, totalAudioLen, totalDataLen,
                     longSampleRate, channels, byteRate);
 
-            while(in.read(data) != -1){
+            while (in.read(data) != -1) {
                 out.write(data);
             }
-            RequestBody fbody = RequestBody.create(MediaType.parse("*/*"),
-                    file);
-            Log.v("CryCry, fbody", Boolean.toString(fbody == null));
-            Log.v("CryCry, file", Boolean.toString(file1 == null));
-            MultipartBody.Part filePart = MultipartBody.Part.createFormData("baby_cry_record" ,file1.getName(), fbody);
-            Log.v("CryCry: filePart", Boolean.toString(filePart == null));
-            CryingReason.getCryReason(filePart);
+
 
             in.close();
             out.close();
@@ -299,19 +319,29 @@ public class Babycry extends AppCompatActivity {
     private View.OnClickListener btnClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            switch(v.getId()){
-                case R.id.btnStart:{
+            switch (v.getId()) {
+                case R.id.btnStart: {
+                    if(CheckPermissions()) {
+                        record.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                isStart = true;
+                                startRecording();
+                                progressbarfinish();
+                            }
+                        });
+                    }
+                    else
+                    {
+                        RequestPermissions();
+                    }
                     AppLog.logString("Start Recording");
-
-                    enableButtons(true);
-                    startRecording();
 
                     break;
                 }
-                case R.id.btnStop:{
+                case R.id.btnStop: {
                     AppLog.logString("Start Recording");
 
-                    enableButtons(false);
                     stopRecording();
 
                     break;
@@ -320,6 +350,87 @@ public class Babycry extends AppCompatActivity {
         }
     };
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_AUDIO_PERMISSION_CODE:
+                if (grantResults.length> 0) {
+                    boolean permissionToRecord = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    boolean permissionToStore = grantResults[1] ==  PackageManager.PERMISSION_GRANTED;
+                    if (permissionToRecord && permissionToStore) {
+                        Toast.makeText(getApplicationContext(), "Permission Granted", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(),"Permission Denied",Toast.LENGTH_LONG).show();
+                    }
+                }
+                break;
+        }
+    }
+    public boolean CheckPermissions() {
+        int result = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+        int result1 = ContextCompat.checkSelfPermission(getApplicationContext(), RECORD_AUDIO);
+        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
+    }
+    private void RequestPermissions() {
+        ActivityCompat.requestPermissions(Babycry.this, new String[]{RECORD_AUDIO, WRITE_EXTERNAL_STORAGE}, REQUEST_AUDIO_PERMISSION_CODE);
+    }
+
+
+    private void send() {
+        file1 = new File("/storage/emulated/0/AudioRecorder/Baby_cry_record" + AUDIO_RECORDER_FILE_EXT_WAV);
+
+        RequestBody fbody = RequestBody.create(MediaType.parse("*/*"),
+                file1);
+        Log.v("CryCry, fbody", Boolean.toString(fbody == null));
+        Log.v("CryCry, file", Boolean.toString(file1 == null));
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData("baby_cry_record", file1.getName(), fbody);
+        Log.v("CryCry: filePart", Boolean.toString(filePart == null));
+        CryingReason.getCryReason(filePart);
+    }
+
+
+//    ///////////////////////// this method cancel record /////////////////////
+//    private void diposeRecording() {
+//        recorder.stop();
+//        cancel.setVisibility(View.INVISIBLE);
+//        mprogressstatus = 0;
+//        isStart= false;
+//
+//    }
+
+    ///////////// this method start progress bar For 10 seconds and visible finish result ////////////
+    private void progressbarfinish() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (mprogressstatus < 100 && isStart) {
+                    mprogressstatus++;
+                    android.os.SystemClock.sleep(100);
+                    mhandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            mprogressbar.setProgress(mprogressstatus);
+                        }
+                    });
+                    record.setEnabled(true);
+                }
+                /////////////////// visible finish result //////////////
+                if (mprogressstatus == 100) {
+                    mhandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            recorder.release();
+                            mfinish.setVisibility(View.VISIBLE);
+                            stopRecording();
+
+                        }
+                    });
+                    record.setEnabled(false);
+                }
+            }
+        }).start();
+    }
+}
 
 /*
         recorder = new MediaRecorder();
@@ -408,11 +519,10 @@ public class Babycry extends AppCompatActivity {
                             recorder.release();
                             mfinish.setVisibility(View.VISIBLE);*/
 
-                     //   }
-                //    });
+    //   }
+    //    });
 
-             //   }
-         //   }
-     //   }).start();
-   // }*/
-}
+    //   }
+    //   }
+    //   }).start();
+    // }*/
