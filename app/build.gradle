@@ -69,7 +69,11 @@ dependencies {
         exclude group: 'com.android.support'
     }
     annotationProcessor 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
 
+    implementation 'com.getbase:floatingactionbutton:1.9.0'
 
     implementation('com.github.bumptech.glide:glide:4.9.0') {
         exclude group: "com.android.support"
