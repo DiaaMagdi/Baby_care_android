@@ -13,13 +13,15 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -29,7 +31,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Babies_setting"></activity>
+        <activity android:name=".Babies_setting" />
         <activity android:name=".detailsfood" />
         <activity android:name=".Nuts" />
         <activity android:name=".Food" />
@@ -69,41 +71,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Vaccination"></activity>
+        <activity android:name=".Vaccination" />
         <activity android:name=".ChooseGallery" />
         <activity android:name=".funny" />
         <activity android:name=".chat" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity android:name=".login" />
         <activity android:name=".Baby_information" />
         <activity android:name=".Baby_information2" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".parent_profile" />
         <activity android:name=".Baby_profile" />
-
-        <activity android:name=".Remainder.ReminderMain">
-
-        </activity>
-        <activity android:name=".Remainder.AddReminderActivity"
-            android:label="@string/title_activity_add_reminder"
-            android:parentActivityName=".Remainder.ReminderMain"
-            android:theme="@style/AppTheme">
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Remainder.ReminderMain"
-                />
-        </activity>
-        <provider
-            android:name=".Remainder.data.AlarmReminderProvider"
-            android:authorities="com.example.babyinformation"
-            android:exported="false" />
-
-        <service
-            android:name=".Remainder.reminder.ReminderAlarmService"
-            android:exported="false" />
 
         <service
             android:name=".FCMMessageReceiverService"
