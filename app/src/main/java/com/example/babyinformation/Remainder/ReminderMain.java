@@ -79,7 +79,7 @@ public class ReminderMain extends AppCompatActivity implements LoaderManager.Loa
             }
         });
 
-//        getSupportLoaderManager().initLoader(VEHICLE_LOADER, null, this);
+        getSupportLoaderManager().initLoader(VEHICLE_LOADER, null, this);
 
     }
 
