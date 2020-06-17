@@ -69,7 +69,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Vaccination" />
+        <activity android:name=".Activity_Vaccination"></activity>
         <activity android:name=".ChooseGallery" />
         <activity android:name=".funny" />
         <activity android:name=".chat" />
