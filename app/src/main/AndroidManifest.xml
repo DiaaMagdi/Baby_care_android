@@ -10,9 +10,9 @@
    Google Maps Android API v2, but you must specify either coarse or fine
    location permissions for the 'MyLocation' functionality.
     -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -25,13 +25,26 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".pagetwositter"/>
+        <activity android:name=".pageonesitter" />
+        <activity android:name=".PopUpBabySitter" />
+        <activity android:name=".CancelRequest" />
+        <activity android:name=".order" />
+        <activity android:name=".orderlist" />
+        <activity android:name=".babysitterinfo" />
         <activity android:name=".Babies_setting" />
+        <activity android:name=".detailsChildern" />
+        <activity android:name=".FinishRequest" />
+        <activity android:name=".profile_Babysitter" />
+        <activity android:name=".AddBabySitter" />
         <activity android:name=".detailsfood" />
         <activity android:name=".Nuts" />
         <activity android:name=".Food" />
@@ -47,6 +60,7 @@
       You can define the keys for the debug and
          release targets in src/debug/ and src/release/.
         -->
+        <!--Google MAP API key-->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB90FxtYG_ybAYXGkz0ybkmkboE2nEbezI" />
@@ -77,13 +91,14 @@
         <activity android:name=".chat" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <activity android:name=".login" />
         <activity android:name=".Baby_information" />
         <activity android:name=".Baby_information2" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".parent_profile" />
         <activity android:name=".Baby_profile" />
+        <activity android:name=".sitter_profile" />
 
         <activity android:name=".Remainder.ReminderMain">
 

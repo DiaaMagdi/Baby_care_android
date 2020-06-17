@@ -2,49 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/babysetting"
     android:layout_gravity="center"
-    android:background="@color/backpop"
-    tools:context=".Page2"
-    >
+    android:orientation="vertical"
+    tools:context=".Page2">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="#ff5f70"
-    android:orientation="horizontal"
-    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:layout_marginBottom="70dp">
 
-    <Button
-        android:id="@+id/Rate"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:background="#ff5f70"
-        android:text="Rate"
-        android:textColor="#fff" />
+        <TextView
+            android:id="@+id/Location"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="Location"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:gravity="center" />
 
-    <Button
-        android:id="@+id/Location"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:background="@drawable/currentbtn"
-        android:text="Location"
-        android:textColor="#fff" />
+        <View
+            android:layout_width="2dp"
+            android:layout_height="fill_parent"
+            android:background="@color/babysetting"
+            android:layout_gravity="center"/>
 
-    <Button
-        android:id="@+id/Specialty"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:background="#ff5f70"
-        android:text="Specialty"
-        android:textColor="#fff" />
+        <TextView
+            android:id="@+id/Specialty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/currentbtn"
+            android:text="Specialty"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:gravity="center" />
 
-</LinearLayout>
+    </LinearLayout>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -61,32 +63,24 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            >
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal"
-
-                >
+                android:layout_gravity="center_vertical|center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MANSOURA"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
+                    android:text="Gynecologist"
                     android:textAlignment="center"
-                    />
-
-
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
             </LinearLayout>
-
-
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -96,32 +90,24 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            >
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal"
-
-                >
+                android:layout_gravity="center_vertical|center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ELMAHALALAH"
+                    android:text="Pediatrician"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:textAlignment="center"
-                    />
-
-
+                    android:textColor="@color/colorPrimary"
+                    android:textAlignment="center" />
             </LinearLayout>
-
-
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -131,33 +117,26 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            >
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal"
-
-                >
+                android:layout_gravity="center_vertical|center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DAMIETTA"
+                    android:text="Dentist"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:textAlignment="center"
-                    />
-
-
+                    android:textColor="@color/colorPrimary"
+                    android:textAlignment="center" />
             </LinearLayout>
-
-
-
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -165,33 +144,26 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            >
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal"
-
-                >
+                android:layout_gravity="center_vertical|center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BANHA"
+                    android:text="Internists"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:textAlignment="center"
-                    />
-
-
+                    android:textColor="@color/colorPrimary"
+                    android:textAlignment="center"/>
             </LinearLayout>
-
-
-
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -199,33 +171,27 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            >
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal"
-
-                >
+                android:layout_gravity="center_vertical|center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ALEXANDRIA"
+                    android:text="Audiologist"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:textAlignment="center"
-                    />
-
-
+                    android:textColor="@color/colorPrimary"
+                    android:textAlignment="center" />
             </LinearLayout>
-
-
-
         </androidx.cardview.widget.CardView>
+
+
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -233,38 +199,27 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
-            >
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_gravity="center_vertical|center_horizontal"
-
-                >
+                android:layout_gravity="center_vertical|center_horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CAIRO"
+                    android:text="Cardiologist"
                     android:textSize="12sp"
                     android:textStyle="bold"
-                    android:textAlignment="center"
-                    />
-
-
+                    android:textColor="@color/colorPrimary"
+                    android:textAlignment="center" />
             </LinearLayout>
-
-
-
         </androidx.cardview.widget.CardView>
-
 
     </GridLayout>
 
-
-
-
 </LinearLayout>
+

@@ -57,11 +57,20 @@ public class TheSecond extends FragmentActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney, Australia, and move the camera.
+        // Add a marker in Sydney, Australia, and `move` the camera.
         LatLng sydney;
         sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        /*
+        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+
+        googleMap.getUiSettings().setZoomGesturesEnabled(true);
+        */
 
         doctorImg = findViewById(R.id.person);
         doc_mail = findViewById(R.id.doc_mail);

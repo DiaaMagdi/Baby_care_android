@@ -47,13 +47,13 @@ public class parent_profile extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-
-
-
-
     public void settingbaby(View view) {
         Intent settingbabies = new Intent(parent_profile.this, setting.class);
         startActivity(settingbabies);
+    }
+
+    public void Sitter(View view) {
+        Intent intent = new Intent(parent_profile.this, AddBabySitter.class);
+        startActivity(intent);
     }
 }

@@ -53,9 +53,13 @@ public class userinfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //check validation
-                if(awesomeValidation.validate()& (parentradio.isChecked() || sitterradio.isChecked())){
+                if(awesomeValidation.validate()& (parentradio.isChecked())){
                     Toast.makeText(getApplicationContext() , "Form Validation Succefully...",Toast.LENGTH_SHORT).show();
                     openActivity2();
+                }
+                else if(awesomeValidation.validate()& (sitterradio.isChecked())){
+                    Toast.makeText(getApplicationContext() , "Form Validation Succefully...",Toast.LENGTH_SHORT).show();
+                    openActivity3();
                 }
                 else {
                     Toast.makeText(getApplicationContext() , "Please choose a baby sitter or a Parent ",Toast.LENGTH_SHORT).show();
@@ -66,6 +70,11 @@ public class userinfo extends AppCompatActivity {
     }
     public void openActivity2() {
         Intent intent = new Intent(this, Baby_information.class);
+        startActivity(intent);
+    }
+
+    public void openActivity3() {
+        Intent intent = new Intent(this, babysitterinfo.class);
         startActivity(intent);
     }
 

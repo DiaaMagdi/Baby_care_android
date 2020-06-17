@@ -31,8 +31,8 @@ public class AddDoctor extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddDoctor.this, PopUp.class);
-                startActivity(intent);
+                PopUp popUp = new PopUp();
+                popUp.show(getSupportFragmentManager(), "Example bottom sheet");
             }
         });
 
