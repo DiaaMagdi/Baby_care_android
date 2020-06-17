@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    android:scrollbars="vertical"
+    tools:context=".detailsChildern">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/editround"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:text="@string/Question1"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/radiochild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio1111"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_photo1_selector"
+                            android:button="@drawable/radio_flat_photo1_selector"
+                            android:onClick="onSelcted" />
+
+                        <RadioButton
+                            android:id="@+id/radio2222"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_photo2_selector"
+                            android:onClick="onSelcted"
+                            android:button="@drawable/radio_flat_photo2_selector" />
+
+                        <RadioButton
+                            android:id="@+id/radio3333"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_photo3_selector"
+                            android:onClick="onSelcted"
+                            android:button="@drawable/radio_flat_photo3_selector" />
+
+                        <RadioButton
+                            android:id="@+id/radio4444"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_photo4_selector"
+                            android:onClick="onSelcted"
+                            android:button="@drawable/radio_flat_photo4_selector" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:text="@string/Question2"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/radiosessions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="1"
+                            android:text="1"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="2"
+                            android:text="2"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio3"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="3"
+                            android:text="3"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio4"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="4"
+                            android:text="4"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio5"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="5"
+                            android:text="5"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:text="@string/Question3"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/radiohours"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio11"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="1"
+                            android:text="1"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio22"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="2"
+                            android:text="2"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio33"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="3"
+                            android:text="3"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio44"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="4"
+                            android:text="4"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio55"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="5"
+                            android:text="5"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:text="@string/Question4"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/radioweeks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio111"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="1"
+                            android:text="1"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio222"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="2"
+                            android:text="2"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio333"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="3"
+                            android:text="3"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio444"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="4"
+                            android:text="4"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                        <RadioButton
+                            android:id="@+id/radio555"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:autofillHints=""
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:hint="5"
+                            android:text="5"
+                            android:textSize="16sp"
+                            android:textColor="@drawable/radio_flat_text_selector"
+                            android:gravity="center"
+                            android:background="@drawable/radio_flat_selector"
+                            android:button="@android:color/transparent" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:text="@string/Question5"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Date"
+                        android:layout_width="220dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/gender1"
+                        android:paddingLeft="21dp"
+                        android:paddingTop="8dp"
+                        android:text="Date to start"
+                        android:textColor="#A6E0828A"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:text="@string/Question6"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edittext"
+                    android:layout_width="227dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:autofillHints=""
+                    android:fontFamily="sans-serif"
+                    android:hint="Type Here .."
+                    android:inputType="text|textAutoCorrect|textCapSentences|textMultiLine"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="#A6E0828A"
+                    android:textColorHint="#A6E0828A"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/editround5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:fontFamily="@font/segoe_ui_bold"
+                        android:text="@string/Expectedprice"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/segoe_ui_bold"
+                        android:text="@string/Salary"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonContinue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/editround4"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:padding="5dp"
+                    android:shadowDx="4"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="@string/Continue1"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
