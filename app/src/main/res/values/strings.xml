@@ -113,6 +113,14 @@
     <string name="stop_recording">Stop</string>
     <string name="audio_format">Format</string>
 
+    <string name="numofRequest">Request 1</string>
+    <string-array name="numofRequest">
+        <item>Request 1</item>
+        <item>Request 2</item>
+        <item>Request 3</item>
+        <item>Request 4</item>
+        <item>Request 5</item>
+    </string-array>
 
     <string-array name="Doctor">
         <item>Doctor</item>
@@ -141,6 +149,7 @@
     <string name="Rate">Rate</string>
     <string name="Location">Location</string>
     <string name="Specialty">Specialty</string>
+    <string name="salary">Salary</string>
 
     <string name="what_s_on_your_mind">Enter your query</string>
     <string name="menu_refresh">Refresh</string>
@@ -253,6 +262,62 @@
         <item>Baby</item>
     </string-array>
 
+    <string-array name="BabySitter">
+        <item>Baby sitter</item>
+        <item>Baby sitter</item>
+        <item>Baby sitter</item>
+        <item>Baby sitter</item>
+        <item>Baby sitter</item>
+    </string-array>
+
+    <string-array name="Salary">
+        <item>2500 EG</item>
+        <item>3000 EG</item>
+        <item>3500 EG</item>
+        <item>1000 EG</item>
+        <item>1000 EG</item>
+    </string-array>
+
+    <string name="BabySitter">BabySitter</string>
+    <string name="Salary">2500 EG</string>
+    <string name="salaryperhour">2500 EG / Hour</string>
+    <string name="Continue">Continue to Order details</string>
+    <string name="Continue1">Continue</string>
+    <string name="Question1">How many children will attend ?</string>
+    <string name="Child1">Child 1</string>
+    <string name="Child2">Child 2</string>
+    <string name="Child3">Child 3</string>
+    <string name="Child4">Child 4</string>
+    <string name="Question2">How many sessions per week ?</string>
+    <string name="Question3">How many Hours per session ?</string>
+    <string name="Question4">For how many weeks ?</string>
+    <string name="Question5">When do you want to start ?</string>
+    <string name="Question6">What is your address in detail ?</string>
+    <string name="RequestSummary">Request Summary</string>
+    <string name="Children">Children</string>
+    <string name="child1">1 Child</string>
+    <string name="Totalhours">Total hours</string>
+    <string name="numofhours">45 hours</string>
+    <string name="estimatedcost">Estimated cost</string>
+    <string name="country">Damietta</string>
+    <string name="sendrequest">Send a request</string>
+    <string name="Expectedprice">Expected price</string>
+    <string name="invalid_address">please Enter your address</string>
+    <string name="invalid_note">Leave your note please</string>
+    <string name="BabySitterInfo">Baby Sitter information</string>
+    <string name="age">Age</string>
+    <string name="Sallary">Salary</string>
+    <string name="Phonenumber">Phone number</string>
+    <string name="slogan">Slogan</string>
+    <string name="Area">Area</string>
+    <string name="Description">Description</string>
+    <string name="Requests">Requests</string>
+    <string name="Name">Name</string>
+    <string name="phone">01050403020</string>
+    <string name="MoreDetailesAboutHours">3 hours/sessions,5 sessions/week</string>
+    <string name="MoreDetailesAboutHours1">3 week long</string>
+    <string name="Reject">Reject Request</string>
+    <string name="Accept">Accept Request</string>
 
 </resources>
 

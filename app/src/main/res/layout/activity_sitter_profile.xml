@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundmain"
+    android:scrollbars="vertical"
+    tools:context=".sitter_profile">
+    <GridLayout
+        android:id="@+id/mainGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:columnOrderPreserved="false"
+        android:alignmentMode="alignMargins"
+        android:layout_weight="8"
+        android:padding="10dp"
+        tools:targetApi="ice_cream_sandwich">
+
+        //////////////////////////////// Row 1 ////////////////////////
+        <androidx.cardview.widget.CardView
+            android:id="@+id/heartid"
+            android:layout_width="0dp"
+            android:onClick="order"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:onClick="order"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:background="@drawable/ordersback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="order"
+                    android:text="Orders"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/reminderid"
+            android:layout_width="0dp"
+            android:onClick="reminder"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="reminder"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/reminderback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reminder"
+                    android:onClick="reminder"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        //////////////////////////////// ROW 2 /////////////////////////
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/predictid"
+            android:layout_width="0dp"
+            android:onClick="predict"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="predict"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/predictback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Predict diseases"
+                    android:onClick="predict"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cryid"
+            android:layout_width="0dp"
+            android:onClick="cry"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="cry"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/babycryback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Baby Cry"
+                    android:onClick="cry"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        //////////////////////////////// ROW 3 /////////////////////////
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dietid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="Diet"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="Diet"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:background="@drawable/dietback"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Diet"
+                    android:onClick="Diet"
+                    android:gravity="top|center"
+                    android:padding="12dp"
+                    android:textAlignment="viewStart"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    tools:ignore="RtlCompat"
+                    />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/settingig"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="setting"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp">
+
+            <LinearLayout
+                android:layout_width="149dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/settingback"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="setting"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:onClick="setting"
+                    android:padding="12dp"
+                    android:text="Setting"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,7 +24,9 @@
     <color name="bg_bubble_watbot">#ecf0f1</color>
     <color name="transparent">#fff2f2</color>
     <color name="fab_pressed">#546e7a</color>
-
+    <color name="sdk">#FFF2F2</color>
+    <color name="sdk1">#FFC6CC</color>
+    <color name="gray">#858585</color>
 
 
 </resources>

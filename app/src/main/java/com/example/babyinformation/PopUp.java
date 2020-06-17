@@ -1,45 +1,41 @@
 package com.example.babyinformation;
 
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-
-import androidx.appcompat.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.babyinformation.fragments.PageFragment1;
 import com.example.babyinformation.fragments.PageFragment2;
-import com.example.babyinformation.fragments.PageFragment3;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PopUp extends AppCompatActivity {
+public class PopUp extends BottomSheetDialogFragment {
 
     private ViewPager pager;
     private PagerAdapter pagerAdapter;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pop_up);
-
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-
-        getWindow().setLayout((int) (width*1),(int)(height*.6));
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_pop_up , container , false);
 
         List<Fragment> list = new ArrayList<>();
         list.add(new PageFragment1());
         list.add(new PageFragment2());
-        list.add(new PageFragment3());
 
-        pager = findViewById(R.id.pager);
-        pagerAdapter = new SlidePagerAdapter(getSupportFragmentManager(),list);
+        pager = view.findViewById(R.id.pager);
+        pagerAdapter = new SlidePagerAdapter(getChildFragmentManager(),list);
         pager.setAdapter(pagerAdapter);
+
+        return view;
     }
+
 }
