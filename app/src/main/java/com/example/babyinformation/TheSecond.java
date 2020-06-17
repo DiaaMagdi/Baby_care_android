@@ -1,6 +1,7 @@
 package com.example.babyinformation;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,12 +25,18 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TheSecond extends FragmentActivity implements OnMapReadyCallback {
+
+    Doctors_ViewModel doctors_viewModel;
+
 
     private GoogleMap mMap;
 
-    ImageView img, arrow_back, phone, fav_button,mail;
-    TextView number, doc_mail;
+    ImageView img, arrow_back, phone, fav_button, mail, doctorImg;
+    TextView number, doc_mail, doc_Name, Spe;
 
     int counter = 0;
     int[] favImages = {R.drawable.fav2, R.drawable.fav};
@@ -55,13 +63,28 @@ public class TheSecond extends FragmentActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
-        doc_mail = (TextView) findViewById(R.id.doc_mail);
-        mail = (ImageView) findViewById(R.id.mail);
+        doctorImg = findViewById(R.id.person);
+        doc_mail = findViewById(R.id.doc_mail);
+        mail = findViewById(R.id.mail);
         fav_button = findViewById(R.id.fav);
-        arrow_back = (ImageView) findViewById(R.id.arrow_back);
-        img = (ImageView) findViewById(R.id.message_mopile);
-        phone = (ImageView) findViewById(R.id.phone);
-        number = (TextView) findViewById(R.id.number);
+        arrow_back = findViewById(R.id.arrow_back);
+        img = findViewById(R.id.message_mopile);
+        phone = findViewById(R.id.phone);
+        number = findViewById(R.id.number);
+        doc_Name = findViewById(R.id.name);
+        Spe = findViewById(R.id.Spe);
+        int i = getIntent().getIntExtra("Position", 0);
+        doctors_viewModel = ViewModelProviders.of(this).get(Doctors_ViewModel.class);
+
+        doctors_viewModel.DoctorsMutableData.observe(this, databases -> {
+            number.setText(databases.get(i).getMobile());
+            doc_mail.setText(databases.get(i).getEmail());
+            doc_Name.setText(databases.get(i).getName());
+            Spe.setText(databases.get(i).getSpecialty());
+            Context context = doctorImg.getContext();
+            int id = context.getResources().getIdentifier(databases.get(i).getPhoto(), "drawable", context.getPackageName());
+            doctorImg.setImageResource(id);
+        });
 
         //Start SMS code
         if (ContextCompat.checkSelfPermission(TheSecond.this,
@@ -146,8 +169,8 @@ public class TheSecond extends FragmentActivity implements OnMapReadyCallback {
         if (counter < 2) {
             fav_button.setBackgroundResource(favImages[counter]);
             counter++;
-        }else {
-            counter=0;
+        } else {
+            counter = 0;
             fav_button.setBackgroundResource(favImages[counter]);
             counter++;
         }
@@ -175,7 +198,8 @@ public class TheSecond extends FragmentActivity implements OnMapReadyCallback {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         switch (requestCode) {
             case 1: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {

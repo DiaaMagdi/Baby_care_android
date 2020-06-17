@@ -2,10 +2,10 @@ package com.example.babyinformation;
 
 import android.os.Bundle;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Page1 extends AppCompatActivity {
-
 
 
     @Override

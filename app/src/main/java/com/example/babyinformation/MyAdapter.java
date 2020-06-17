@@ -12,33 +12,35 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+import java.util.ArrayList;
+import java.util.List;
 
-    String data1[], data2[], data3[];
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+    private List<DoctorsDatabase> DoctorsList = new ArrayList<>();
+
+    String data1[];
     int images[];
     Context context;
 
-    public MyAdapter(Context ct, String s1[], String s2[], String s3[], int img[]) {
+    public MyAdapter(Context ct, String s1[], int img[]) {
         context = ct;
         data1 = s1;
-        data2 = s2;
-        data3 = s3;
         images = img;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_row, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.myText1.setText(data1[position]);
-        holder.myText2.setText(data2[position]);
-        holder.myText3.setText(data3[position]);
+        holder.myText2.setText(DoctorsList.get(position).getName());
+        holder.myText3.setText(DoctorsList.get(position).getAddress());
+        holder.Speciality.setText(DoctorsList.get(position).getSpecialty());
         holder.myImage.setImageResource(images[position]);
 
 
@@ -46,10 +48,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, TheSecond.class);
-                intent.putExtra("data1", data1[position]);
-                intent.putExtra("data2", data2[position]);
-                intent.putExtra("data3", data3[position]);
-                intent.putExtra("myImage", images[position]);
+                intent.putExtra("Position", position);
                 context.startActivity(intent);
             }
 
@@ -60,12 +59,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return DoctorsList.size();
+    }
+
+    public void setList(List<DoctorsDatabase> DoctorsList) {
+        this.DoctorsList = DoctorsList;
+        notifyDataSetChanged();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView myText1, myText2, myText3;
+        TextView myText1, myText2, myText3,Speciality;
         ImageView myImage;
         ConstraintLayout mainLayout;
 
@@ -74,6 +78,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             myText1 = itemView.findViewById(R.id.myText1);
             myText2 = itemView.findViewById(R.id.myText2);
             myText3 = itemView.findViewById(R.id.myText3);
+            Speciality = itemView.findViewById(R.id.Speciality);
             myImage = itemView.findViewById(R.id.myImageView);
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }

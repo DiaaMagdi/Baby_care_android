@@ -45,7 +45,7 @@
             android:layout_centerInParent="true"
             android:layout_marginBottom="30dp"
             android:layout_marginEnd="5dp"
-            android:src="@drawable/person"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -143,12 +143,6 @@
 
 
                     <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/video" />
-
-                    <ImageView
                         android:id="@+id/message_mopile"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
@@ -225,6 +219,55 @@
             android:layout_height="2dp"
             android:layout_margin="10dp"
             android:background="#0a304e" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/spe" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Spe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#0a304e"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/segoe_ui_bold"/>
+
+
+                </LinearLayout>
+</LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -20,7 +20,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="150dp"
             android:paddingBottom="10dp"
             android:paddingLeft="10dp"
             android:background="@drawable/backdoc">
@@ -63,17 +63,32 @@
                 app:layout_constraintTop_toBottomOf="@+id/myImageView" />
 
             <TextView
+                android:id="@+id/Speciality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="7dp"
+                android:text="@string/DoctorName"
+                android:textColor="@color/black"
+
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/myText2" />
+
+            <TextView
                 android:id="@+id/myText3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="47dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/MoreDescription"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/myText2" />
+                app:layout_constraintTop_toBottomOf="@+id/Speciality" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
