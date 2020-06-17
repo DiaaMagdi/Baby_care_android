@@ -60,17 +60,6 @@ public class userinfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //check validation
-                if(awesomeValidation.validate()& (parentradio.isChecked())){
-                    Toast.makeText(getApplicationContext() , "Form Validation Succefully...",Toast.LENGTH_SHORT).show();
-                    openActivity2();
-                }
-                else if(awesomeValidation.validate()& (sitterradio.isChecked())){
-                    Toast.makeText(getApplicationContext() , "Form Validation Succefully...",Toast.LENGTH_SHORT).show();
-                    openActivity3();
-                }
-                else {
-                    Toast.makeText(getApplicationContext() , "Please choose a baby sitter or a Parent ",Toast.LENGTH_SHORT).show();
-                }
 
                 SignUp();
 
@@ -112,6 +101,12 @@ public class userinfo extends AppCompatActivity {
             return;
         }
 
+        if (!(parentradio.isChecked() || sitterradio.isChecked())){
+            parentradio.requestFocus();
+            parentradio.setError("Please choose your role");
+            Toast.makeText(getApplicationContext() , "Please choose a baby sitter or a Parent ",Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
         RetrofitClient.getClient().create(ApiService.class).sendRegister(email,name,"male","parent",password).enqueue(new Callback<Register>() {
@@ -119,8 +114,16 @@ public class userinfo extends AppCompatActivity {
             public void onResponse(Call<Register> call, Response<Register> response) {
                 if (response.isSuccessful())
                 {
-                    Intent intent = new Intent(userinfo.this, Baby_information.class);
-                    intent.putExtra("dara",response.body().getName());
+                    Intent intent;
+                    //check validation
+                    if(parentradio.isChecked()){
+                        intent = new Intent(userinfo.this, Baby_information.class);
+                    }
+                    else{
+                        intent = new Intent(userinfo.this, babysitterinfo.class);
+                    }
+
+                    intent.putExtra("dara", response.body().getName());
                     startActivity(intent);
                 }
             }
@@ -130,16 +133,6 @@ public class userinfo extends AppCompatActivity {
 
             }
         });
-    }
-
-    public void openActivity2() {
-        Intent intent = new Intent(this, Baby_information.class);
-        startActivity(intent);
-    }
-
-    public void openActivity3() {
-        Intent intent = new Intent(this, babysitterinfo.class);
-        startActivity(intent);
     }
 
 }
