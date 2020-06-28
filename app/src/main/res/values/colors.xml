@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ff939c</color>
+    <color name="applozic_theme_color_primary">#ff939c</color>
     <color name="colorPrimaryDark">#ff939c</color>
     <color name="colorAccent">#D81B60</color>
     <color name="foshya">#A6E0828A</color>

@@ -8,6 +8,11 @@ repositories {
 }
 
 android {
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -23,6 +28,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "APP_ID", '"237705af941a6fd6d4af3db6ab2f2d6bc"'
     }
     buildTypes {
         release {
@@ -43,10 +50,11 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.0.0'
-    implementation 'com.ibm.watson:assistant:8.1.0'
-    implementation 'com.ibm.watson:text-to-speech:8.1.0'
-    implementation 'com.ibm.watson:speech-to-text:8.1.0'
-    implementation 'com.ibm.watson.developer_cloud:android-sdk:0.5.0'
+    implementation 'io.kommunicate.sdk:kommunicateui:2.0.1'
+//    implementation 'com.ibm.watson:assistant:8.1.0'
+//    implementation 'com.ibm.watson:text-to-speech:8.1.0'
+//    implementation 'com.ibm.watson:speech-to-text:8.1.0'
+//    implementation 'com.ibm.watson.developer_cloud:android-sdk:0.5.0'
     testImplementation 'junit:junit:4.12'
     implementation 'com.google.firebase:firebase-messaging:20.1.2'
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
