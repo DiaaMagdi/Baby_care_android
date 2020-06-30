@@ -28,7 +28,7 @@ public class AlarmReminderDbHelper extends SQLiteOpenHelper {
                 + AlarmReminderContract.AlarmReminderEntry.KEY_REPEAT_TYPE + " TEXT NOT NULL, "
                 + AlarmReminderContract.AlarmReminderEntry.KEY_ACTIVE + " TEXT NOT NULL " + " );";
 
-        // Execute the SQL statement
+
         sqLiteDatabase.execSQL(SQL_CREATE_ALARM_TABLE);
 
 

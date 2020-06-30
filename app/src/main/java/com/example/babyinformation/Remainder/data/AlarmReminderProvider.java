@@ -45,7 +45,7 @@ public class AlarmReminderProvider extends ContentProvider {
                         String sortOrder) {
         SQLiteDatabase database = mDbHelper.getReadableDatabase();
 
-        // This cursor will hold the result of the query
+
         Cursor cursor = null;
 
         int match = sUriMatcher.match(uri);

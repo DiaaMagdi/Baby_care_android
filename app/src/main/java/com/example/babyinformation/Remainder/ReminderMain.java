@@ -40,6 +40,12 @@ public class ReminderMain extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reminder_main);
 
+
+
+
+
+
+
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         mToolbar.setTitle(R.string.app_name);
@@ -60,7 +66,6 @@ public class ReminderMain extends AppCompatActivity implements LoaderManager.Loa
 
                 Uri currentVehicleUri = ContentUris.withAppendedId(AlarmReminderContract.AlarmReminderEntry.CONTENT_URI, id);
 
-                // Set the URI on the data field of the intent
                 intent.setData(currentVehicleUri);
 
                 startActivity(intent);
@@ -97,12 +102,12 @@ public class ReminderMain extends AppCompatActivity implements LoaderManager.Loa
 
         };
 
-        return new CursorLoader(this,   // Parent activity context
-                AlarmReminderContract.AlarmReminderEntry.CONTENT_URI,   // Provider content URI to query
-                projection,             // Columns to include in the resulting Cursor
-                null,                   // No selection clause
-                null,                   // No selection arguments
-                null);                  // Default sort order
+        return new CursorLoader(this,
+                AlarmReminderContract.AlarmReminderEntry.CONTENT_URI,
+                projection,
+                null,
+                null,
+                null);
 
     }
 
